@@ -1,0 +1,11 @@
+package com.mgsystems.exer.services;
+
+import com.mgsystems.exer.entities.Order;
+
+public class ShippingService {
+	
+	public double shipment(Order order) {
+		
+	}
+
+}

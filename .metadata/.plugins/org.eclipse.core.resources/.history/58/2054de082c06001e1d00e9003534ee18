@@ -1,0 +1,8 @@
+package com.mgsystems.exer.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class OrderService {
+
+}

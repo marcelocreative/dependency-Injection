@@ -1,0 +1,49 @@
+package com.mgsystems.exer;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.mgsystems.exer.entities.Order;
+import com.mgsystems.exer.services.OrderService;
+
+@SpringBootApplication
+public class DependencyInjectionApplication implements CommandLineRunner{
+
+	@Autowired
+	private OrderService orderService;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(DependencyInjectionApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("ENTRADA");
+		System.out.print("Código do pedido: ");
+		Integer codigo = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("Valor básico: ");
+		Double valorBasico = sc.nextDouble();
+		sc.nextLine();
+		
+		System.out.print("Porcentagem desconto: ");
+		Double porcentagem = sc.nextDouble();
+		sc.nextLine();
+		
+		Order order= new Order(codigo, valorBasico, porcentagem);
+		System.out.println("\nSAÍDA");
+		System.out.println("Pedido código: "+order.getCode());
+		System.out.println("Valor total: "+orderService.total(order));
+		
+		sc.close();
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.mgsystems.exer.entities;
+
+public class Order {
+	
+	private Integer code;
+	private Double basic;
+	private Double descount;
+	
+	public Order(Integer code, Double basic, Double descount) {
+		this.code = code;
+		this.basic = basic;
+		this.descount = descount;
+	}
+	
+	
+
+}
